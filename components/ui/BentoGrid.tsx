@@ -1,16 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
-// Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
-
 import { cn } from "@/lib/utils";
-
 
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import SafeLottie from "./SafeLottie";
 
 export const BentoGrid = ({
   className,
@@ -56,6 +53,26 @@ export const BentoGridItem = ({
   const rightLists = ["Typescript", "React", "Nextjs"];
 
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const [showLottie, setShowLottie] = useState(false);
+
+  // Only run on client-side
+  useEffect(() => {
+    setIsClient(true);
+    
+    // Reset copied state after animation completes
+    if (copied) {
+      setShowLottie(true);
+      const timer = setTimeout(() => {
+        setCopied(false);
+        // Hide Lottie just before it unmounts to prevent the error
+        setTimeout(() => {
+          setShowLottie(false);
+        }, 100);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
 
   const defaultOptions = {
     loop: copied,
@@ -67,9 +84,11 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "tomas@zabotec.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+    if (typeof navigator !== 'undefined') {
+      const text = "tomas@zabotec.com";
+      navigator.clipboard.writeText(text);
+      setCopied(true);
+    }
   };
 
   return (
@@ -180,7 +199,15 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                {isClient && (
+                  <SafeLottie 
+                    options={defaultOptions} 
+                    height={200} 
+                    width={400}
+                    isClickToPauseDisabled={true}
+                    isVisible={showLottie}
+                  />
+                )}
               </div>
 
               <MagicButton

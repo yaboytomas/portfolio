@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/sub0/:path*",
+            "destination": "https://subscription-tracker-front.vercel.app/:path*"
+        }
+    ]
+}

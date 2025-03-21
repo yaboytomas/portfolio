@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import { LanguageProvider } from "@/lib/LanguageContext";
+import { es } from "@/lib/i18n";
+import { SpeedInsightsWrapper } from "./SpeedInsightsConfig";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tomas's Portfolio",
-  description: "Modern & Minimal Portfolio",
+  title: es.metadata.title,
+  description: es.metadata.description,
 };
 
 export default function RootLayout({
@@ -19,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/jsm-logo.png" sizes="any" />
       </head>
@@ -30,9 +32,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Analytics />
-          <SpeedInsights />
+          <LanguageProvider>
+            {children}
+            <Analytics />
+            <SpeedInsightsWrapper />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

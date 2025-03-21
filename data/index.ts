@@ -1,14 +1,14 @@
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  { name: "Acerca de", link: "#about" },
+  { name: "Proyectos", link: "#projects" },
+  { name: "Testimonios", link: "#testimonials" },
+  { name: "Contacto", link: "#contact" },
 ];
 
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "Priorizo la colaboración con el cliente, fomentando una comunicación abierta",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "Soy muy flexible con las comunicaciones en diferentes zonas horarias",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -28,8 +28,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "Mi stack tecnológico",
+    description: "Constantemente trato de mejorar",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Entusiasta de la tecnología con pasión por el desarrollo.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,8 +49,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building an automated call module for Odoo 14",
-    description: "The Inside Scoop",
+    title: "Actualmente construyendo un módulo de llamadas automatizado para Odoo 14",
+    description: "La información privilegiada",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,7 +59,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "¿Quieres iniciar un proyecto juntos?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -72,32 +72,32 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    title: "Sistema Solar 3D de Planetas para Explorar",
+    des: "Explora las maravillas de nuestro sistema solar con esta cautivadora simulación 3D de los planetas usando Three.js.",
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "/ui.earth.com",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "Yoom - Aplicación de Videoconferencia",
+    des: "Simplifica tu experiencia de videoconferencia con Yoom. Conéctate sin problemas con colegas y amigos.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "/ui.yoom.com",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "AI Image SaaS - Aplicación tipo Canva",
+    des: "Una aplicación REAL de Software como Servicio con funciones de IA y un sistema de pagos y créditos utilizando la última pila tecnológica.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "/ui.aiimg.com",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Sitio Web 3D Animado de Apple iPhone",
+    des: "Recreé el sitio web del iPhone 15 Pro de Apple, combinando animaciones GSAP y efectos 3D de Three.js.",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "/ui.apple.com",
@@ -107,15 +107,15 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Tomas was a fantastic experience. His professionalism, responsiveness, and commitment to delivering quality work were evident throughout the project. Despite working with a small budget, Tomas ensured the website was functional, visually appealing, and aligned perfectly with my goals for establishing an online presence. If you're looking for someone to create a website that truly represents your brand, Tomas is an excellent choice.",
+      "Colaborar con Tomás fue una experiencia fantástica. Su profesionalismo, capacidad de respuesta y compromiso con la entrega de un trabajo de calidad fueron evidentes durante todo el proyecto. A pesar de trabajar con un presupuesto pequeño, Tomás se aseguró de que el sitio web fuera funcional, visualmente atractivo y perfectamente alineado con mis objetivos para establecer una presencia en línea. Si estás buscando a alguien para crear un sitio web que realmente represente tu marca, Tomás es una excelente opción.",
     name: "Jordi Rius",
-    title: "Owner of Aluminios RH",
+    title: "Propietario de Aluminios RH",
   },
   {
     quote:
-      "Working with Tomas on the development of an automated call module for Odoo 14 was a seamless and impressive experience. His professionalism, technical expertise, and commitment to delivering top-notch results were evident from start to finish. Tomas approaches every challenge with enthusiasm and a clear focus on achieving the best possible outcome. If you're looking for a skilled developer to enhance your Odoo system.",
+      "Trabajar con Tomás en el desarrollo de un módulo de llamadas automatizado para Odoo 14 fue una experiencia fluida e impresionante. Su profesionalismo, experiencia técnica y compromiso para ofrecer resultados de primera categoría fueron evidentes de principio a fin. Tomás aborda cada desafío con entusiasmo y un enfoque claro en lograr el mejor resultado posible. Si estás buscando un desarrollador hábil para mejorar tu sistema Odoo.",
     name: "Lukas Bustos",
-    title: "Comercial Manager of Edu21",
+    title: "Gerente Comercial de Edu21",
   },
 ];
 
@@ -155,29 +155,29 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Intern",
-    desc: "Assisted in the development of a web-based platform using XML and Python",
+    title: "Pasante Frontend",
+    desc: "Asistí en el desarrollo de una plataforma web utilizando XML y Python",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Desarrollador de Apps Móviles - JSM Tech",
+    desc: "Diseñé y desarrollé aplicaciones móviles para plataformas iOS y Android utilizando React Native.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Proyecto Freelance de Desarrollo de Apps",
+    desc: "Lideré el desarrollo de una aplicación móvil para un cliente, desde el concepto inicial hasta la implementación en las tiendas de aplicaciones.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Desarrollador Frontend Principal",
+    desc: "Desarrollé y mantuve características orientadas al usuario utilizando tecnologías frontend modernas.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },

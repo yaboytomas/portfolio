@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { es } from "@/lib/i18n";
-import { SpeedInsightsWrapper } from "./SpeedInsightsConfig";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
           <LanguageProvider>
             {children}
             <Analytics />
-            <SpeedInsightsWrapper />
+            <SpeedInsights />
           </LanguageProvider>
         </ThemeProvider>
       </body>

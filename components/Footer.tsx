@@ -1,6 +1,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Image from 'next/image';
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
@@ -55,7 +56,13 @@ const Footer = () => {
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 hover:bg-black-300 transition-colors duration-300"
               aria-label={info.id === 1 ? 'GitHub' : info.id === 2 ? 'Instagram' : 'LinkedIn'}
             >
-              <img src={info.img} alt="icons" width={20} height={20} />
+              <Image 
+                src={info.img} 
+                alt={info.id === 1 ? 'GitHub' : info.id === 2 ? 'Instagram' : 'LinkedIn'} 
+                width={20} 
+                height={20} 
+                loading="lazy" 
+              />
             </a>
           ))}
         </div>

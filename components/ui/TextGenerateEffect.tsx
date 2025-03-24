@@ -37,8 +37,10 @@ const TextGenerateEffectComponent = ({
               opacity: 1,
             },
             {
-              duration: 0.04,
-              delay: stagger(0.04),
+              // Increased duration for slower animation
+              duration: 0.15,
+              // Increased delay between letters
+              delay: stagger(0.08),
               ease: "easeInOut",
             }
           );

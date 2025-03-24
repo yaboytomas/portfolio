@@ -6,7 +6,8 @@ const nextConfig = {
         minimumCacheTTL: 31536000, // 1 year
     },
     experimental: {
-        optimizeCss: true,
+        // Disable CSS optimization due to critters module issues
+        // optimizeCss: true,
     },
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',

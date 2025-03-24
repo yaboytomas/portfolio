@@ -10,7 +10,7 @@ const RecentProjects = () => {
   const { translations } = useLanguage();
   
   return (
-    <div className="py-20">
+    <div className="py-20" id="proyectos">
       <h1 className="heading">
         Una pequeña selección de{" "}
         <span className="text-purple">proyectos recientes</span>

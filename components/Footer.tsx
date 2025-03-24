@@ -1,4 +1,6 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
@@ -19,13 +21,24 @@ const Footer = () => {
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Contáctame hoy y hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.
         </p>
-        <a href="mailto:tomas@zabotec.com">
-          <MagicButton
-            title="Pongámonos en contacto"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a 
+            href="mailto:tomas@zabotec.com"
+            className="flex items-center justify-center w-14 h-14 rounded-full bg-[#D44638] hover:bg-[#B23121] transition-colors duration-300 shadow-lg"
+            aria-label="Envíame un correo electrónico"
+          >
+            <MdEmail className="text-white text-2xl" />
+          </a>
+          <a 
+            href="https://wa.me/56949095966" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#128C7E] transition-colors duration-300 shadow-lg"
+            aria-label="Contáctame por WhatsApp"
+          >
+            <FaWhatsapp className="text-white text-2xl" />
+          </a>
+        </div>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">

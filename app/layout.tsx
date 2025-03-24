@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
@@ -20,11 +20,13 @@ export const metadata: Metadata = {
   description: es.metadata.description,
   // Improve TTFB with preconnect
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://portfolio-yaboytomas.vercel.app'),
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+// Separate viewport export
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

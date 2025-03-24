@@ -4,8 +4,8 @@ import { useEffect, useState, memo } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-// Optimize by memoizing the component to prevent re-renders
-export const TextGenerateEffect = memo(({
+// Create component before memoizing to add display name
+const TextGenerateEffectComponent = ({
   words,
   className,
 }: {
@@ -13,7 +13,7 @@ export const TextGenerateEffect = memo(({
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
+  const isInView = useInView(scope, { once: true, margin: "100px 0px" });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   // Precompute words array
@@ -22,8 +22,12 @@ export const TextGenerateEffect = memo(({
   useEffect(() => {
     // Only run animation once when in view
     if (isInView && !hasAnimated && scope.current) {
+      let isMounted = true;
+      
       // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
+      const animationFrame = requestAnimationFrame(() => {
+        if (!isMounted) return;
+        
         const spans = scope.current?.querySelectorAll('span');
         
         if (spans && spans.length > 0) {
@@ -41,11 +45,16 @@ export const TextGenerateEffect = memo(({
           setHasAnimated(true);
         }
       });
+      
+      return () => {
+        isMounted = false;
+        cancelAnimationFrame(animationFrame);
+      };
     }
-  }, [isInView, animate, hasAnimated]);
+  }, [isInView, animate, hasAnimated, scope]);
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={cn("font-bold", className || "")}>
       <div className="my-4">
         <div className="dark:text-white text-black leading-snug tracking-wide">
           <motion.div 
@@ -55,7 +64,7 @@ export const TextGenerateEffect = memo(({
           >
             {wordsArray.map((word, idx) => (
               <motion.span
-                key={`${word}-${idx}`}
+                key={`word-${idx}`}
                 className={`${idx > 3 ? "text-purple" : "dark:text-white text-black"}`}
                 initial={{ opacity: 0 }}
               >
@@ -67,4 +76,9 @@ export const TextGenerateEffect = memo(({
       </div>
     </div>
   );
-});
+};
+
+// Memoize the component and export with display name
+export const TextGenerateEffect = memo(TextGenerateEffectComponent);
+// Add display name
+TextGenerateEffect.displayName = "TextGenerateEffect";

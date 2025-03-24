@@ -1,3 +1,15 @@
+import type { Metadata, Viewport } from "next";
+
+export const metadata: Metadata = {
+  title: "Página no encontrada",
+  description: "Lo sentimos, no pudimos encontrar la página que buscas."
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function NotFound() {
   return (
     <div className="flex items-center justify-center h-screen flex-col">
